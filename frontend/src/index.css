@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CEP Tumba College design system. All colors HSL. */
+
+@layer base {
+  :root {
+    /* Brand */
+    --background: 210 40% 98%;        /* #F8FAFC */
+    --foreground: 222 47% 11%;        /* #0F172A */
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 224 64% 33%;           /* #1E3A8A */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 224 76% 48%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 38 92% 50%;             /* #F59E0B */
+    --accent-foreground: 222 47% 11%;
+
+    --success: 142 71% 29%;           /* #15803D */
+    --success-foreground: 0 0% 100%;
+
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 11%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;            /* #E5E7EB */
+    --input: 220 13% 91%;
+    --ring: 224 64% 33%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(224 64% 33%), hsl(224 76% 48%));
+    --gradient-accent: linear-gradient(135deg, hsl(38 92% 50%), hsl(32 95% 44%));
+    --gradient-hero: linear-gradient(135deg, hsl(224 64% 33%) 0%, hsl(262 60% 40%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 71% 29%), hsl(160 70% 35%));
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(222 47% 11% / 0.05);
+    --shadow-md: 0 4px 12px -2px hsl(222 47% 11% / 0.08);
+    --shadow-lg: 0 12px 32px -8px hsl(224 64% 33% / 0.18);
+    --shadow-glow: 0 0 0 1px hsl(224 76% 48% / 0.2), 0 8px 24px -4px hsl(224 76% 48% / 0.25);
+
+    /* Sidebar */
+    --sidebar-background: 224 64% 33%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 38 92% 50%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 224 60% 28%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 224 50% 25%;
+    --sidebar-ring: 38 92% 50%;
+
+    /* Transitions */
+    --transition-base: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 222 47% 7%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 10%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 224 76% 58%;
+    --primary-foreground: 222 47% 7%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 38 92% 55%;
+    --accent-foreground: 222 47% 11%;
+    --success: 142 65% 45%;
+    --success-foreground: 0 0% 100%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 224 76% 58%;
+    --sidebar-background: 222 47% 9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 38 92% 55%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 217 33% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 15%;
+    --sidebar-ring: 38 92% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scrollbar-gutter: stable;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    @apply tracking-tight;
+  }
+}
+
+@layer utilities {
+  .gradient-primary { background: var(--gradient-primary); }
+  .gradient-accent { background: var(--gradient-accent); }
+  .gradient-hero { background: var(--gradient-hero); }
+  .gradient-success { background: var(--gradient-success); }
+  .shadow-elegant { box-shadow: var(--shadow-md); }
+  .shadow-elevated { box-shadow: var(--shadow-lg); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .transition-base { transition: var(--transition-base); }
+}
